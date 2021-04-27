@@ -1,0 +1,58 @@
+version: "2.0"
+
+
+stories:
+
+- story: Welcome Path
+  steps:
+  - intent: greet
+  - action: utter_welcome_greet
+
+
+  - action: utter_greet_city
+  - intent: choose_city
+  - action : action_city_input
+
+- story: City path when user inputs invalid city name and prompted to re-enter
+  steps:
+  - action: utter_city
+  - intent: choose_city
+  - action : action_city_input
+  - action: action_city_next_action
+
+- story: City path when user inputs invalid city name and chooses from options
+  steps:
+  - intent: choose_city_dym
+  - action : action_city_next_action
+
+
+- story: Cuisine Selection
+  steps:
+  - action: utter_cuisine
+  - intent: choose_cuisine
+  - action: action_cuisine_subcategory_input
+
+- story: Cuisine Sub subcategory
+  steps:
+  - intent: choose_cuisine_subcategory
+  - action: utter_cost
+  - intent: choose_cost
+  - action: utter_rating
+
+- story: Recommendations Display
+  steps:
+  - intent: choose_rating
+  - action: actions_get_restaurants
+
+- story: Restaurant Search Continue?
+  steps:
+  - action: utter_continue_ind
+  - intent: choose_cont_ind
+  - action: actions_cont_direction
+
+
+- story: Feedback
+  steps:
+  - action: utter_feedback
+  - intent: choose_feedback
+  - action: utter_thanks

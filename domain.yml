@@ -1,0 +1,165 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- choose_city
+- choose_city_dym
+- greet
+- goodbye
+- affirm
+- deny
+- choose_cuisine
+- choose_cuisine_subcategory
+- choose_cost
+- choose_rating
+- bot_challenge
+- choose_cont_ind
+- choose_feedback
+entities:
+- slot_city
+- slot_city_dym
+- slot_cuisine
+- slot_rating
+- slot_cost
+- slot_cuisine_subcategory
+- slot_cont_ind
+- slot_feedback
+slots:
+  slot_city:
+    type: text
+    influence_conversation: true
+  slot_cuisine:
+    type: text
+    influence_conversation: true
+  slot_rating:
+    type: text
+    influence_conversation: true
+  slot_cost:
+    type: text
+    influence_conversation: true
+  slot_city_dym:
+    type: text
+    influence_conversation: true
+  slot_cuisine_subcategory:
+    type: text
+    influence_conversation: true
+  slot_cont_ind:
+    type: text
+    influence_conversation: true
+  slot_feedback:
+    type: text
+    influence_conversation: true
+
+
+responses:
+
+  utter_welcome_greet:
+    - image: 'https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/1/1/8/6/3396811-1-eng-GB/Indian-unicorn-becomes-first-to-break-even-in-food-delivery-market.jpg'
+      text: Hey! Welcome to Foodie. I help you choose a restaurant
+
+  utter_greet_city:
+    - text: What city are you looking for?
+
+  utter_cuisine:
+  - text: What cuisine are you looking for?
+    buttons:
+    - title: Indian
+      payload: '/choose_cuisine{"slot_cuisine": "Indian"}'
+    - title: Asian
+      payload: '/choose_cuisine{"slot_cuisine": "Asian"}'
+    - title: European
+      payload: '/choose_cuisine{"slot_cuisine": "European"}'
+    - title: American
+      payload: '/choose_cuisine{"slot_cuisine": "American"}'
+    - title: Any/Others
+      payload: '/choose_cuisine{"slot_cuisine": "Any/Others"}'
+
+  utter_rating:
+  - text: What is your preferred rating for the restaurants?
+    buttons:
+    - title: 3 and above
+      payload: '/choose_rating{{"slot_rating": "3 and above"}}'
+    - title: 4 and above
+      payload: '/choose_rating{{"slot_rating": "4 and above"}}'
+    - title: 5 and above
+      payload: '/choose_rating{{"slot_rating": "5 and above"}}'
+    - title: Any/Skip
+      payload: '/choose_rating{{"slot_rating": "Any/Skip"}}'
+
+  utter_cuisine_subcategory:
+  - text: Any particular cuisine subcategory that you would like?
+
+  utter_cost:
+  - text: What is your price range (Avg price for 2)?
+    buttons:
+    - title: '< Rs.400'
+      payload: '/choose_cost{"slot_cost": "Super Budget Friendly"}'
+    - title: 'Rs.400 - Rs.700'
+      payload: '/choose_cost{{"slot_cost": "Budget Friendly"}}'
+    - title: 'Rs.700 - Rs.1200'
+      payload: '/choose_cost{{"slot_cost": "Luxury Budget"}}'
+    - title: '> Rs.1200'
+      payload: '/choose_cost{{"slot_cost": "Super Luxury Budget"}}'
+    - title: Any/Skip
+      payload: '/choose_cost{"slot_cost": "Any/Skip"}'
+  utter_recommendations:
+  - text: You can check out the following restaurants-
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_did_you_mean:
+  - text: Did you mean
+  utter_city:
+  - text: Please re-enter your city
+
+  utter_continue_ind:
+  - text: "Do you want to search for more restaurants"
+    buttons:
+    - title: 'Yes'
+      payload: '/choose_cont_ind{"slot_cont_ind": "Yes"}'
+    - title: 'No'
+      payload: '/choose_cont_ind{"slot_cont_ind": "No"}'
+  utter_feedback:
+  - text: "How would rate your experience with Foodie"
+    buttons:
+    - title: Excellent
+      payload: '/choose_feedback{{"slot_feedback": "Excellent"}}'
+    - title: Good
+      payload: '/choose_feedback{{"slot_feedback": "Good"}}'
+    - title: Average
+      payload: '/choose_feedback{{"slot_feedback": "Average"}}'
+    - title: Poor
+      payload: '/choose_feedback{{"slot_feedback": "Bad"}}'
+    - title: Very Poor
+      payload: '/choose_feedback{{"slot_feedback": "Bad"}}'
+
+
+
+
+  utter_thanks:
+  - text: "Thank you for your feedback. We look forward to helping you again!"
+
+actions:
+- action_city_input
+- action_city_next_action
+- actions_get_restaurants
+- utter_cost
+- utter_cuisine
+- utter_goodbye
+- utter_greet_city
+- utter_happy
+- utter_iamabot
+- utter_rating
+- utter_recommendations
+- utter_city
+- utter_cuisine_subcategory
+- action_cuisine_subcategory_input
+- utter_welcome_greet
+- utter_continue_ind
+- actions_cont_direction
+- utter_feedback
+- utter_thanks

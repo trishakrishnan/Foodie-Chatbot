@@ -1,0 +1,210 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - Hi
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: choose_city
+  examples: |
+    - [New Delhi](slot_city)
+    - [Bangalore](slot_city)
+    - [Chennai](slot_city)
+    - [Makati City](slot_city)
+    - [Mandaluyong City](slot_city)
+    - [Pasay City](slot_city)
+    - [Pasig City](slot_city)
+    - [Quezon City](slot_city)
+    - [San Juan City](slot_city)
+    - [Santa Rosa](slot_city)
+    - [Tagaytay City](slot_city)
+    - [Taguig City](slot_city)
+    - [Brasí_lia](slot_city)
+    - [Rio de Janeiro](slot_city)
+    - [Sí£o Paulo](slot_city)
+    - [Albany](slot_city)
+    - [Armidale](slot_city)
+    - [Athens](slot_city)
+    - [Augusta](slot_city)
+    - [Balingup](slot_city)
+    - [Beechworth](slot_city)
+    - [Boise](slot_city)
+    - [Cedar Rapids/Iowa City](slot_city)
+    - [Chatham-Kent](slot_city)
+    - [Clatskanie](slot_city)
+    - [Cochrane](slot_city)
+    - [Columbus](slot_city)
+    - [Consort](slot_city)
+    - [Dalton](slot_city)
+    - [Davenport](slot_city)
+    - [Des Moines](slot_city)
+    - [Dicky Beach](slot_city)
+    - [Dubuque](slot_city)
+    - [East Ballina](slot_city)
+    - [Fernley](slot_city)
+    - [Flaxton](slot_city)
+    - [Forrest](slot_city)
+    - [Gainesville](slot_city)
+    - [Hepburn Springs](slot_city)
+    - [Huskisson](slot_city)
+    - [Inverloch](slot_city)
+    - [Lakes Entrance](slot_city)
+    - [Lakeview](slot_city)
+    - [Lincoln](slot_city)
+    - [Lorn](slot_city)
+    - [Macedon](slot_city)
+    - [Macon](slot_city)
+    - [Mayfield](slot_city)
+    - [Mc Millan](slot_city)
+    - [Middleton Beach](slot_city)
+    - [Miller](slot_city)
+    - [Monroe](slot_city)
+    - [Montville](slot_city)
+    - [Ojo Caliente](slot_city)
+    - [Orlando](slot_city)
+    - [Palm Cove](slot_city)
+    - [Paynesville](slot_city)
+    - [Penola](slot_city)
+    - [Pensacola](slot_city)
+    - [Phillip Island](slot_city)
+    - [Pocatello](slot_city)
+    - [Potrero](slot_city)
+    - [Princeton](slot_city)
+    - [Rest of Hawaii](slot_city)
+    - [Savannah](slot_city)
+    - [Singapore](slot_city)
+    - [Sioux City](slot_city)
+    - [Tampa Bay](slot_city)
+    - [Tanunda](slot_city)
+    - [Trentham East](slot_city)
+    - [Valdosta](slot_city)
+    - [Vernonia](slot_city)
+    - [Victor Harbor](slot_city)
+    - [Vineland Station](slot_city)
+    - [Waterloo](slot_city)
+    - [Weirton](slot_city)
+    - [Winchester Bay](slot_city)
+    - [Yorkton](slot_city)
+    - [Abu Dhabi](slot_city)
+    - [Dubai](slot_city)
+    - [Sharjah](slot_city)
+    - [Agra](slot_city)
+    - [Ahmedabad](slot_city)
+    - [Allahabad](slot_city)
+    - [Amritsar](slot_city)
+    - [Aurangabad](slot_city)
+    - [Bhopal](slot_city)
+    - [Bhubaneshwar](slot_city)
+    - [Chandigarh](slot_city)
+    - [Coimbatore](slot_city)
+    - [Dehradun](slot_city)
+    - [Faridabad](slot_city)
+    - [Ghaziabad](slot_city)
+    - [Goa](slot_city)
+    - [Gurgaon](slot_city)
+    - [Guwahati](slot_city)
+    - [Hyderabad](slot_city)
+    - [Indore](slot_city)
+    - [Jaipur](slot_city)
+    - [Kanpur](slot_city)
+    - [Kochi](slot_city)
+    - [Kolkata](slot_city)
+    - [Lucknow](slot_city)
+    - [Ludhiana](slot_city)
+    - [Mangalore](slot_city)
+    - [Mohali](slot_city)
+    - [Mumbai](slot_city)
+    - [Mysore](slot_city)
+    - [Nagpur](slot_city)
+    - [Nashik](slot_city)
+    - [Noida](slot_city)
+    - [Panchkula](slot_city)
+    - [Patna](slot_city)
+    - [Puducherry](slot_city)
+    - [Pune](slot_city)
+    - [Ranchi](slot_city)
+    - [Secunderabad](slot_city)
+    - [Surat](slot_city)
+    - [Vadodara](slot_city)
+    - [Varanasi](slot_city)
+    - [Vizag](slot_city)
+    - [Bandung](slot_city)
+    - [Bogor](slot_city)
+    - [Jakarta](slot_city)
+    - [Tangerang](slot_city)
+    - [Auckland](slot_city)
+    - [Wellington City](slot_city)
+    - [Birmingham](slot_city)
+    - [Edinburgh](slot_city)
+    - [London](slot_city)
+    - [Manchester](slot_city)
+    - [Doha](slot_city)
+    - [Cape Town](slot_city)
+    - [Inner City](slot_city)
+    - [Johannesburg](slot_city)
+    - [Pretoria](slot_city)
+    - [Randburg](slot_city)
+    - [Sandton](slot_city)
+    - [Colombo](slot_city)
+    - [Ankara](slot_city)
+    - [ÛÁstanbul](slot_city)
+    - [Delhi](slot_city)
+- intent: choose_cuisine
+  examples: |
+
+
+
+
+- intent: choose_cost
+  examples: |
+
+- intent: choose_rating
+  examples: |
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
